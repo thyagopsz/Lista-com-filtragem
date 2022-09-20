@@ -17,7 +17,7 @@ body{
 }
 /* Estilizando campo de busca */
 .container input{
-    width: 90%;
+    width: 100%;
     padding: 10px;
     border: none;
     font-size: 1.23rem;
