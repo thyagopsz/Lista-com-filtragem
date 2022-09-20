@@ -1,3 +1,6 @@
+let dados;
+
+const input = document.querySelector("input[type='text']");
 
 const lerAPI = async () =>{ 
     try{
@@ -10,9 +13,9 @@ const lerAPI = async () =>{
     }
 }
 
-const popularLista = async () =>{
-    const dados = await lerAPI();
+const popularLista = (dados) => {
     const listaProdutosUI  = document.querySelector('.lista-produtos');
+    listaProdutosUI.innerHTML = '';
     for(let dado of dados){
         const {title, description} = dado;
         listaProdutosUI.innerHTML += `
@@ -23,4 +26,20 @@ const popularLista = async () =>{
         `
     }
 }
-popularLista();
+
+const renderizar = async () =>{
+    dados = await lerAPI();
+    popularLista(dados);
+}
+
+const filtrar = (valor) =>{
+   let filtered = dados.filter((dado) => dado.title.includes(valor))
+   popularLista(filtered);
+}
+
+input.addEventListener('input', () => {
+    filtrar(input.value);
+})
+
+
+renderizar();
