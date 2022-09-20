@@ -1,0 +1,30 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style-type: none;
+}
+
+body{
+    background-color: #8268bc;
+
+}
+
+.container{
+    /* border: solid 2px; */
+    width: 90%;
+    margin: 100px auto;
+}
+/* Estilizando campo de busca */
+.container input{
+    width: 90%;
+    padding: 10px;
+    border: none;
+    font-size: 1.23rem;
+    border-radius: 10px;
+}
+
+.container ul{
+    width: 90%;
+    margin-top: 10px;
+}
